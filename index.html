@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JoyCode Docs</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <header>
+    <h1>JoyCode Docs</h1>
+    <p>EchoAI is active — writing support is built in.</p>
+  </header>
+
+  <main>
+    <div id="editor-container">
+      <textarea id="editor" placeholder="Start writing here... Press Enter to apply suggestions after typing to receive suggestions"></textarea>
+      <aside id="echoai-sidebar">
+        <h2>EchoAI Suggestions</h2>
+        <div id="echoai-output">Your writing improvements will appear here. Press <strong>Enter</strong> to apply suggestions after typing to receive suggestions.</div>
+      </aside>
+    </div>
+
+    <div id="actions">
+      <button onclick="exportText()">Export as .txt</button>
+      <button onclick="exportPDF()">Export as .pdf</button>
+      <button onclick="exportDocx()">Export as .docx</button>
+      <a href="echoai.html">Open EchoAI</a>
+    </div>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
+</html>

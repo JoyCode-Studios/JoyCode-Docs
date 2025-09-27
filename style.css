@@ -1,0 +1,134 @@
+/* Base Styling */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e3c72, #2a5298, #ff6ec4);
+  background-size: 200% 200%;
+  animation: gradientShift 15s ease infinite;
+  color: #fff;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  text-align: center;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+}
+
+header h1 {
+  font-size: 3rem;
+  margin: 0;
+  letter-spacing: 1px;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #e0e0ff;
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 200px); /* Adjust for header/footer */
+  box-sizing: border-box;
+}
+
+.chat-log {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.user, .bot {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  border-radius: 8px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+.user {
+  background-color: #2a5298;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.bot {
+  background-color: #ff6ec4;
+  align-self: flex-start;
+  text-align: left;
+}
+
+.input-area {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.8rem;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  min-width: 200px;
+}
+
+button {
+  padding: 0.8rem 1.2rem;
+  background-color: #2a5298;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff6ec4;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: #ccc;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  input[type="text"] {
+    font-size: 0.9rem;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .user, .bot {
+    font-size: 0.9rem;
+  }
+}
