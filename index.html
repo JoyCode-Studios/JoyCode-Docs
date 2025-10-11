@@ -5,32 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>JoyCode Docs</title>
   <link rel="stylesheet" href="index.css" />
+  <style>
+    #editor {
+      width: 100%;
+      height: 500px;
+      font-size: 1rem;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+    #editor-container {
+      margin-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <h1>JoyCode Docs</h1>
-    <p>EchoAI is active — writing support is built in.</p>
+    <p>Write freely — no distractions.</p>
   </header>
 
   <main>
     <div id="editor-container">
-      <textarea id="editor" placeholder="Start writing here... Press Enter to apply suggestions after typing to receive suggestions"></textarea>
-      <aside id="echoai-sidebar">
-        <h2>EchoAI Suggestions</h2>
-        <div id="echoai-output">Your writing improvements will appear here. Press <strong>Enter</strong> to apply suggestions after typing to receive suggestions.</div>
-      </aside>
+      <textarea id="editor" placeholder="Start writing here..."></textarea>
     </div>
 
     <div id="actions">
       <button onclick="exportText()">Export as .txt</button>
       <button onclick="exportPDF()">Export as .pdf</button>
       <button onclick="exportDocx()">Export as .docx</button>
-      <a href="echoai.html">Open EchoAI</a>
     </div>
   </main>
 
   <script src="index.js"></script>
 </body>
-</html>
 </html>

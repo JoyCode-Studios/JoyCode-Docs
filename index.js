@@ -1,44 +1,14 @@
 const editor = document.getElementById("editor");
-const echoaiOutput = document.getElementById("echoai-output");
+const output = document.getElementById("output");
 
-editor.addEventListener("input", async () => {
+editor.addEventListener("input", () => {
   const userText = editor.value;
   if (!userText.trim()) {
-    echoaiOutput.innerText = "Start typing to see suggestions.";
+    output.innerText = "Start typing to see your text.";
     return;
   }
 
-  echoaiOutput.innerText = "EchoAI is thinking…";
-
-  try {
-    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer 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" // ← Insert your OpenRouter key
-      },
-      body: JSON.stringify({
-        model: "mistral-7b-instruct",
-        messages: [
-          {
-            role: "system",
-            content: "You are EchoAI, a writing assistant that improves clarity, grammar, and tone."
-          },
-          {
-            role: "user",
-            content: `Improve this writing:\n\n${userText}`
-          }
-        ]
-      })
-    });
-
-    const data = await response.json();
-    const improvedText = data.choices?.[0]?.message?.content || "No suggestion returned.";
-    echoaiOutput.innerText = improvedText;
-  } catch (error) {
-    echoaiOutput.innerText = "EchoAI failed to respond. Check your API key or network.";
-    console.error("EchoAI error:", error);
-  }
+  output.innerText = userText;
 });
 
 function isEditorEmpty() {
